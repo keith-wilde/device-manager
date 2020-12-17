@@ -29,7 +29,7 @@ public class ErrorController {
     }
 
     @ExceptionHandler({InvalidDeviceRequestException.class})
-    public ResponseEntity<List<ErrorMessage>> handleAccessDeniedException(InvalidDeviceRequestException e) {
+    public ResponseEntity<List<ErrorMessage>> handleInvalidDeviceRequestException(InvalidDeviceRequestException e) {
         List<ErrorMessage> errorMessages = new ArrayList<>();
         if (!CollectionUtils.isEmpty(e.getErrorCodes())) {
             e.getErrorCodes().forEach(errorCode -> {
